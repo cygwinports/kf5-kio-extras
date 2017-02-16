@@ -1,0 +1,10 @@
+--- origsrc/kio-extras-16.08.3/man/CMakeLists.txt	2016-11-07 06:21:48.000000000 -0600
++++ src/kio-extras-16.08.3/man/CMakeLists.txt	2017-02-02 09:45:43.813484600 -0600
+@@ -15,6 +15,7 @@ install(TARGETS kio_man DESTINATION ${PL
+ 
+ add_library(kmanpart kmanpart.cpp )
+ target_compile_definitions(kmanpart PRIVATE -DPROJECT_VERSION="${PROJECT_VERSION}")
++set_target_properties(kmanpart PROPERTIES PREFIX "lib")
+ 
+ target_link_libraries(kmanpart KF5::KHtml KF5::KDELibs4Support)
+ 
