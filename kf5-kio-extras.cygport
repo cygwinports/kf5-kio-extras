@@ -2,7 +2,7 @@ inherit kf5
 
 NAME="kf5-kio-extras"
 VERSION=16.08.3
-RELEASE=1
+RELEASE=2
 CATEGORY="KDE"
 SUMMARY="KDE 5 KIO plugins"
 
