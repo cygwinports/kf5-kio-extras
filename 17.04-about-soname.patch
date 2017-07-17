@@ -1,0 +1,11 @@
+--- origsrc/kio-extras-17.04.3/about/CMakeLists.txt	2017-07-10 12:33:26.000000000 -0500
++++ src/kio-extras-17.04.3/about/CMakeLists.txt	2017-07-13 20:22:28.438847300 -0500
+@@ -7,7 +7,7 @@
+ set(kio_about_PART_SRCS kio_about.cpp )
+ 
+ 
+-add_library(kio_about ${kio_about_PART_SRCS})
++add_library(kio_about MODULE ${kio_about_PART_SRCS})
+ 
+ 
+ target_link_libraries(kio_about  KF5::KIOCore )

@@ -1,12 +1,13 @@
 inherit kf5
 
 NAME="kf5-kio-extras"
-VERSION=16.08.3
-RELEASE=2
+VERSION=17.04.3
+RELEASE=1
 CATEGORY="KDE"
 SUMMARY="KDE 5 KIO plugins"
 
 PATCH_URI="
 	16.08.3-manpart-soname.patch
 	16.08.3-nfs-libtirpc.patch
+	17.04-about-soname.patch
 "
