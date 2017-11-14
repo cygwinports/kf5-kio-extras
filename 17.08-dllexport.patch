@@ -1,0 +1,10 @@
+--- origsrc/kio-extras-17.08.3/network/network/CMakeLists.txt	2017-11-04 21:51:23.000000000 -0500
++++ src/kio-extras-17.08.3/network/network/CMakeLists.txt	2017-11-12 16:48:52.156028200 -0600
+@@ -1,6 +1,7 @@
+ set(HAVE_SLP ${SLP_FOUND})
+ configure_file( config-slp.h.cmake  ${CMAKE_CURRENT_BINARY_DIR}/config-slp.h )
+ 
++add_definitions(-DMAKE_MOLLETNETWORK_LIB)
+ include_directories(
+   builder
+ )

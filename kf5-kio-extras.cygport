@@ -1,7 +1,7 @@
 inherit kf5
 
 NAME="kf5-kio-extras"
-VERSION=17.04.3
+VERSION=17.08.3
 RELEASE=1
 CATEGORY="KDE"
 SUMMARY="KDE 5 KIO plugins"
@@ -10,4 +10,37 @@ PATCH_URI="
 	16.08.3-manpart-soname.patch
 	16.08.3-nfs-libtirpc.patch
 	17.04-about-soname.patch
+	17.08-dllexport.patch
 "
+
+PKG_NAMES="${NAME} libkioarchive5 libkioarchive-devel"
+kf5_kio_extras_CONTENTS="
+	--exclude=*.dll.a
+	usr/bin/cygmolletnetwork5-17.dll
+	usr/lib/qt5/plugins/*
+	usr/share/config.kcfg/jpegcreatorsettings5.kcfg
+	usr/share/dbus-1/interfaces/kf5_org.kde.network.kioslavenotifier.xml
+	usr/share/doc/HTML/*/kioslave5/
+	usr/share/kio_*/
+	usr/share/konqsidebartng/virtual_folders/remote/virtualfolder_network.desktop
+	usr/share/kservices5/*
+	usr/share/kservicetypes5/thumbcreator.desktop
+	usr/share/locale/*/LC_MESSAGES/kfileaudiopreview5.mo
+	usr/share/locale/*/LC_MESSAGES/kio5_*.mo
+	usr/share/mime/packages/kf5_network.xml
+	usr/share/remoteview/network.desktop
+"
+libkioarchive5_CONTENTS="
+	usr/bin/cygkioarchive-5.dll
+"
+libkioarchive_devel_CONTENTS="
+	usr/include/KF5/kio_archivebase.h
+	usr/include/KF5/libkioarchive_export.h
+	usr/lib/cmake/KioArchive/
+	usr/lib/libkioarchive.dll.a
+"
+PKG_IGNORE="
+	usr/lib/libmolletnetwork5.dll.a
+	usr/lib/qt5/plugins/libkmanpart.dll.a
+"
+
